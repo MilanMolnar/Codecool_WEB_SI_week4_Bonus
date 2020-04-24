@@ -8,6 +8,8 @@ function startGame(){
   document.querySelectorAll('.memory-card').forEach(c => {
     c.style.display = "block";
 });
+document.querySelectorAll('.memory-card').forEach(c => {
+  c.style.cursor = "pointer"});
 document.querySelector('.titleGame').style.display = "none";
 document.querySelector('a').style.display = "none";
 document.querySelector('.resetButton').style.display = "block";
@@ -19,6 +21,7 @@ function resetGame(){
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
+    card.style.cursor = "pointer";
   });
   
   cards.forEach(card => card.addEventListener('click', flipCard));
@@ -54,7 +57,8 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-
+  firstCard.style.cursor = "not-allowed";
+  secondCard.style.cursor = "not-allowed";
   resetBoard();
 }
 //If not match unflip the cards so it shows the backside again
