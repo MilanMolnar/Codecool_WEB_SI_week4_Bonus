@@ -324,12 +324,3 @@ a:active .icon-arrow {
         border-radius: 50%;
     }
 }
-
-.resetButton{
-    margin-left: calc(50% - 168px);
-    width: 300px;
-    height: 100px;
-    position: absolute;
-    display: none;
-    margin-top: 200px;
-}
